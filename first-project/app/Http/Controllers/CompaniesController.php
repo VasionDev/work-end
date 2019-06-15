@@ -27,4 +27,5 @@ class CompaniesController extends Controller
 
         return redirect('companies');
     }
+
 }

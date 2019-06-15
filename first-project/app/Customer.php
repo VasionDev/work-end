@@ -8,6 +8,9 @@ use App\Company;
 class Customer extends Model
 {
     protected $guarded = [];
+    protected $attributes = [
+        'status'=> 1
+    ];
     public function scopeActive($query){
         return $query->where('status', 1);
     }
@@ -21,9 +24,13 @@ class Customer extends Model
     }
 
     public function getStatusAttribute($attribute){
+        return $this->getUserStatus()[$attribute];
+    }
+
+    public function getUserStatus(){
         return [
             1=> 'Active',
             0=> 'Inactive'
-        ][$attribute];
+        ];
     }
 }

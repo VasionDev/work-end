@@ -15,6 +15,7 @@
             <th scope="col">Email</th>
             <th scope="col">Company</th>
             <th scope="col">Status</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -25,6 +26,7 @@
                 <td>{{$customer->email}}</td>
                 <td>{{$customer->company->name}}</td>
                 <td>{{$customer->status}}</td>
+                <td><a class="btn btn-success" href="/customers/{{$customer->id}}">Detail</a></td>
             </tr> 
             @endforeach
         </tbody>
